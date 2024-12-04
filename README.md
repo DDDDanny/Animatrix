@@ -1,5 +1,7 @@
-<div style="width: 100%;display: flex;justify-content: center;margin-top: 50px">
-    <img src="logo.png" alt="Logo" width="260" />
+<div>
+    <p align="center">
+        <img src="logo.png" alt="Logo" style="zoom:30%;width:30%;" />
+    </p>
 </div>
 
 ---
