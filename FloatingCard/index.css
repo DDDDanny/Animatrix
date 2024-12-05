@@ -1,0 +1,108 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#root {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #161623;
+    color: white;
+}
+
+#root::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: circle(20% at 10% 10%);
+    background-color: rgba(77, 103, 239, 0.5);
+}
+
+#root::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    clip-path: circle(10% at right 70%);
+    background-color: rgba(132, 152, 252, 0.5);
+}
+
+.cards-container {
+    width: 960px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    flex-wrap: wrap;
+    z-index: 2;
+}
+
+.card-style {
+    width: 240px;
+    margin: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 5px 5px 50px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+}
+
+.card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.5s ease;
+}
+
+.card-content:hover {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card-content h2 {
+    position: absolute;
+    top: 0;
+    right: 11px;
+    font-size: 7rem;
+    margin-top: 0;
+    color: rgba(255, 255, 255, 0.10);
+    pointer-events: none;
+}
+
+.card-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0;
+}
+
+.card-content p {
+    height: 200px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.card-content a {
+    position: relative;
+    text-decoration: none;
+    padding: 5px 25px;
+    background-color: #fff;
+    border-radius: 20px;
+    color: #2a2a2a;
+    font-weight: bolder;
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+}
