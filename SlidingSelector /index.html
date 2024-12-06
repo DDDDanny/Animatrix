@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sliding Selector</title>
+    <link type="text/css" href="index.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div id="root">
+        <span id="sliding_value">50</span>
+        <label title="range">
+            <input type="range" id="sliding" min="0" max="100" value="50" />
+        </label>
+    </div>
+    <script>
+      const sliderEl = document.getElementById('sliding')
+      const sliderValue = document.getElementById('sliding_value')
+      sliderEl.addEventListener("input", () => {
+        sliderValue.innerText = sliderEl.value
+      })
+    </script>
+</body>
+</html>
