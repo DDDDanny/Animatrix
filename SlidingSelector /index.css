@@ -13,3 +13,71 @@ body {
     color: white;
 }
 
+#root label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#sliding_value {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    background-color: #FAC145;
+    text-align: center;
+    line-height: 30px; /* 容器的高度等于容器的高度 */
+    border-radius: 4px;
+    margin: 0 20px;
+    z-index: 1;
+    font-size: 13px;
+}
+
+#sliding_value::after {
+    width: 12px;
+    height: 12px;
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: #FAC145;
+    border-radius: 2px;
+    transform: rotate(45deg);
+    top: 30%;
+    left: 75%;
+    z-index: -1;
+}
+
+input[type='range'] {
+    /* 禁用浏览器默认外观 */
+    -webkit-appearance: none;
+    width: 180px;
+    height: 15px;
+    border-radius: 8px;
+    background: -webkit-linear-gradient(#FAC145, #FAC145) no-repeat, #dcdcdc;
+    /*background-size: 50% 100%;*/
+    outline: none;
+    box-shadow: 0 0 15px #FAC14550;
+}
+
+/*input[type='range']::-webkit-slider-runnable-track {*/
+/*    height: 15px;*/
+/*    border-radius: 8px;*/
+/*    background-color: #fff;*/
+/*}*/
+
+
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+input[type='range']::-webkit-slider-thumb:hover {
+    cursor: pointer;
+}
+
+input[type='range']:active::-webkit-slider-thumb {
+    background-color: #fff;
+    box-shadow: 0 0 5px #ffffff50;
+}

@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Sliding Selector</title>
     <link type="text/css" href="index.css" rel="stylesheet" />
-
 </head>
 <body>
     <div id="root">
@@ -15,9 +14,11 @@
     </div>
     <script>
       const sliderEl = document.getElementById('sliding')
+      sliderEl.style.backgroundSize = `${(sliderEl.value / sliderEl.max) * 100}% 100%`
       const sliderValue = document.getElementById('sliding_value')
       sliderEl.addEventListener("input", () => {
         sliderValue.innerText = sliderEl.value
+        sliderEl.style.backgroundSize = `${(sliderEl.value / sliderEl.max) * 100}% 100%`
       })
     </script>
 </body>
