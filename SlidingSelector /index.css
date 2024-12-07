@@ -58,13 +58,6 @@ input[type='range'] {
     box-shadow: 0 0 15px #FAC14550;
 }
 
-/*input[type='range']::-webkit-slider-runnable-track {*/
-/*    height: 15px;*/
-/*    border-radius: 8px;*/
-/*    background-color: #fff;*/
-/*}*/
-
-
 input[type='range']::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 20px;
