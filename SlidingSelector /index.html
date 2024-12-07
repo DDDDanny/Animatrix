@@ -13,12 +13,39 @@
         </label>
     </div>
     <script>
+      // Method 1：
+      // const sliderEl = document.getElementById('sliding')
+      // sliderEl.style.backgroundSize = `${(sliderEl.value / sliderEl.max) * 100}% 100%`
+      // const sliderValue = document.getElementById('sliding_value')
+      // sliderEl.addEventListener("input", () => {
+      //   sliderValue.innerText = sliderEl.value
+      //   sliderEl.style.backgroundSize = `${(sliderEl.value / sliderEl.max) * 100}% 100%`
+      // })
+
+      // Method 2:
       const sliderEl = document.getElementById('sliding')
-      sliderEl.style.backgroundSize = `${(sliderEl.value / sliderEl.max) * 100}% 100%`
       const sliderValue = document.getElementById('sliding_value')
-      sliderEl.addEventListener("input", () => {
-        sliderValue.innerText = sliderEl.value
-        sliderEl.style.backgroundSize = `${(sliderEl.value / sliderEl.max) * 100}% 100%`
+
+      // 创建一个响应式对象
+      const sliderState = new Proxy({
+        value: sliderEl.value,
+        backgroundSize: `${(sliderEl.value / sliderEl.max) * 100}% 100%`
+      }, {
+        set(target, prop, newValue) {
+          target[prop] = newValue
+          if (prop === 'value') {
+            sliderEl.value = newValue
+            sliderEl.style.backgroundSize = `${(newValue / sliderEl.max) * 100}% 100%`
+            sliderValue.innerText = newValue
+          }
+          return true
+        },
+      })
+      // 初始化时设置背景大小
+      sliderEl.style.backgroundSize = sliderState.backgroundSize
+      // 监听输入事件，更新响应式状态
+      sliderEl.addEventListener('input', () => {
+        sliderState.value = sliderEl.value
       })
     </script>
 </body>

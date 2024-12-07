@@ -53,7 +53,6 @@ input[type='range'] {
     height: 15px;
     border-radius: 8px;
     background: -webkit-linear-gradient(#FAC145, #FAC145) no-repeat, #dcdcdc;
-    /*background-size: 50% 100%;*/
     outline: none;
     box-shadow: 0 0 15px #FAC14550;
 }
