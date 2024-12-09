@@ -1,0 +1,146 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#root {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #303339;
+    color: white;
+}
+
+.kill-container {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+ul {
+    width: 100%;
+    padding: 0;
+}
+
+li {
+    margin: 40px 0;
+    position: relative;
+    list-style: none;
+}
+
+li::before, li::after {
+    content: '';
+    display: block; /* 块级元素 */
+    width: 100%;
+    height: 10px;
+    border-radius: 8px;
+
+    position: absolute;
+    margin: 15px 0;
+    top: 20px;
+}
+
+li::before {
+    background-color: rgba(189, 189, 189, 0.5);
+}
+
+li:after {
+    background-image: linear-gradient(90deg, #FAC145, #ffdc75);
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+.python:after {
+    animation-name: python;
+}
+
+@keyframes python {
+    from {
+        width: 0;
+    }
+    to {
+        width: 90%;
+    }
+}
+
+.nodejs:after {
+    animation-name: nodejs;
+}
+
+@keyframes nodejs {
+    from {
+        width: 0;
+    }
+    to {
+        width: 80%;
+    }
+}
+
+.flask::after {
+    animation-name: flask;
+}
+
+@keyframes flask {
+    from {
+        width: 0;
+    }
+    to {
+        width: 70%;
+    }
+}
+
+.javascript::after {
+    animation-name: javascript;
+}
+
+@keyframes javascript {
+    from {
+        width: 0;
+    }
+    to {
+        width: 60%;
+    }
+}
+
+.playwright::after {
+    animation-name: playwright;
+}
+
+@keyframes playwright {
+    from {
+        width: 0;
+    }
+    to {
+        width: 50%;
+    }
+}
+
+.django::after {
+    animation-name: django;
+}
+
+@keyframes django {
+    from {
+        width: 0;
+    }
+    to {
+        width: 60%;
+    }
+}
+
+.kill-container img {
+    width: 23px;
+    height: 23px;
+    transform: rotate(0deg);
+    transition: all 1s ease-in-out;
+
+    &:hover {
+        transform: rotate(180deg);
+    }
+}
+
