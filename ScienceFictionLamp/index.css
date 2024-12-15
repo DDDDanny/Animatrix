@@ -2,3 +2,120 @@ body {
     margin: 0;
     padding: 0;
 }
+
+#root {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #303339;
+}
+
+.neon-button {
+    width: 280px;
+    height: 80px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ababab;
+    overflow: hidden;   /* 控制多余的部分隐藏 */
+    transition: all .2s ease-in-out;
+    /* 使用 filter hue-rotate（色相旋转）可以直接改变色调*/
+    /*filter:hue-rotate(150deg)*/
+}
+
+.neon-button span {
+    font-size: 24px;
+    letter-spacing: 4px;
+}
+
+.neon-button:hover {
+    background-color: #FAC145;
+    color: #FFF;
+    cursor: pointer;
+    box-shadow: 0 0 5px #FAC145,
+                0 0 25px #FAC145,
+                0 0 50px #FAC145,
+                0 0 100px #FAC145;
+}
+
+.neon-button div {
+    position: absolute;
+}
+
+.neon-button div:nth-child(1) {
+    width: 100%;
+    height: 2px;
+    top: 0;
+    left: -100%;
+    background: linear-gradient(to right, transparent, #FAC145);
+    animation: animate1 2s linear infinite;
+}
+
+@keyframes animate1 {
+    0% {
+        left: -100%;
+    }
+    50%,100% {
+        left: 100%;
+    }
+}
+
+.neon-button div:nth-child(2) {
+    width: 2px;
+    height: 100%;
+    top: -100%;
+    right: 0;
+    background: linear-gradient(to bottom, transparent, #FAC145);
+    animation: animate2 2s linear infinite;
+    animation-delay: 0.5s;
+}
+
+@keyframes animate2 {
+    0% {
+        top: -100%;
+    }
+    50%,100% {
+        top: 100%;
+    }
+}
+
+.neon-button div:nth-child(3) {
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    right: -100%;
+    background: linear-gradient(to left, transparent, #FAC145);
+    animation: animate3 2s linear infinite;
+    animation-delay: 1s;
+}
+
+@keyframes animate3 {
+    0% {
+        right: -100%;
+    }
+    50%,100% {
+        right: 100%;
+    }
+}
+
+.neon-button div:nth-child(4) {
+    width: 2px;
+    height: 100%;
+    bottom: -100%;
+    left: 0;
+    background: linear-gradient(to top, transparent, #FAC145);
+    animation: animate4 2s linear infinite;
+    animation-delay: 1.5s;
+}
+
+@keyframes animate4 {
+    0% {
+        bottom: -100%;
+    }
+    50%,100% {
+        bottom: 100%;
+    }
+}
