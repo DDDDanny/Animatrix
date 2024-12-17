@@ -14,6 +14,7 @@
         <img src="./FloatingCard/001.gif" alt="001" style="width:900%;" />
     </p>
 </div>
+
 [🚀 Floating Card Animation](https://github.com/DDDDanny/Animatrix/tree/master/FloatingCard)
 
 ---
