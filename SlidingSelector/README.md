@@ -1,6 +1,6 @@
 ## Sliding Selector
 
-### CSS实现悬浮卡片动画
+### CSS实现滑动选择器
 
 <div>
     <p align="center">
